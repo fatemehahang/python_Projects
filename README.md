@@ -1,1 +1,1 @@
-session 7 --> user mangment
+session 7 --> user Management
