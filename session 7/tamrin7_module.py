@@ -54,20 +54,22 @@ def user_data():
         return None
 
 def login_check():
-    username = input("Enter username: ")
-    password = input("Enter password: ")
-    if username in user_list:
-        if user_list[username]["password"] == password:
+    username_check = input("Enter username: ")
+    password_check = input("Enter password: ")
+    for user in user_list:
+        if user["username"] == username_check:
             print("Info : login ok")
-        elif user_list[username]["status"] == "n" :
-            print("Info : User is not active")
-        else:
-            print("Error : Invalid password")
-    else:
-        print("Error : invalid username")
+            if user["password"] == password_check :
+                if user["status"] == "y":
+                    print("Info : login ok")
+                else:
+                    print("Info : user locked")
+            else:
+                print("Error : Invalid password")
 
 def show_user():
     for user in user_list:
-        print(f"{user['username']} "
-              f"{user['password'],print('*******')} "
-              f"{user['status']}")
+        print(f"Username :{user['username']:10} "
+              f"Nickname :{user['nickname']:10} "
+              f"Password :{'*' * len(user['password']):10,} "
+              f"Status :{bool(user['status'])}")
