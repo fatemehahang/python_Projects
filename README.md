@@ -1,3 +1,3 @@
-The projects: (Group B)
+The projects: 
 
-Project1 --> user Management
+Project 1(Group B) --> user Management
