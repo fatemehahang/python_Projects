@@ -1,8 +1,8 @@
 import sqlite3
 
-
-connection = sqlite3.connect('mft.db')
-connection.close()
+def create_database():
+    connection = sqlite3.connect('lesson.db')
+    connection.close()
 
 def save(id, title, teacher, unit):
     connection = sqlite3.connect('mft.db')
